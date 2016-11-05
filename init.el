@@ -9,7 +9,14 @@
 
 (defvar myPackages
   '(better-defaults
+    paredit
     elpy
+    clojure-mode
+    clojure-mode-extra-font-locking
+    cider
+    rainbow-delimiters
+    magit
+    tagedit
     material-theme))
 
 (mapc #'(lambda (package)
