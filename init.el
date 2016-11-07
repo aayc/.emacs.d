@@ -29,5 +29,6 @@
 
 (setq inhibit-startup-message t) ;; hide the startup message
 (load-theme 'material t) ;; load material theme
+(global-visual-line-mode t)
 (global-linum-mode t)
 (elpy-enable)
