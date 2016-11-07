@@ -31,4 +31,12 @@
 (load-theme 'material t) ;; load material theme
 (global-visual-line-mode t)
 (global-linum-mode t)
+
+;; CLOJURE MODE
+(add-hook 'clojure-mode-hook 'enable-paredit-mode)
+(require 'clojure-mode-extra-font-locking)
+(show-paren-mode 1)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+
 (elpy-enable)
