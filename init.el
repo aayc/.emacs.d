@@ -1,7 +1,11 @@
 (require 'package)
 
 (add-to-list 'package-archives
-       '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
 (package-initialize)
 (when (not package-archive-contents)
@@ -9,6 +13,8 @@
 
 (defvar myPackages
   '(better-defaults
+    haskell-mode
+    intero
     paredit
     elpy
     clojure-mode
@@ -38,5 +44,13 @@
 (show-paren-mode 1)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; HASKELL MODE
+;(add-hook 'haskell-mode-hook 'intero-mode)
+
+;; BACKUPS
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (elpy-enable)
